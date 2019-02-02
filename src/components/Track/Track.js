@@ -9,17 +9,6 @@ class Track extends React.Component {
 
   handleMove(event) {
     this.props.moveItem(this.props);
-
-    if (this.props.icon === '+') {
-      console.log('Add to playlist');
-      //Remove from search results array and add to playlist array
-      //Or, if single array, just mark selected: true.
-    }
-    else if (this.props.icon === '-') {
-      console.log('Remove from playlist');
-      //Remove from playlist array and add to search results array
-      //Or, if single array, just mark selected: false.      
-    }
   }
 
   render() {
