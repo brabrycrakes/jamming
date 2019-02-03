@@ -49,7 +49,7 @@ class App extends Component {
   }
   moveItem(item) {
     const tracks = this.state.tracks.slice();
-    for (var i=0; i < tracks.length; i++) {
+    for (let i=0; i < tracks.length; i++) {
       if (tracks[i].id === item.id) {
         tracks[i].selected = !tracks[i].selected;
         this.setState({
