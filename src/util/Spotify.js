@@ -47,9 +47,6 @@ const Spotify = {
             }
           });
         }
-        else {
-          console.log('No tracks');
-        }
       }
     );
   },
@@ -70,7 +67,8 @@ const Spotify = {
       userId = jsonResponse.id;
         return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
             headers: {
-              Authorization: `Bearer ${token}`
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json"
             },
             method: 'POST',
             body: JSON.stringify({name: name})
@@ -79,7 +77,8 @@ const Spotify = {
             const playlistId = jsonResponse.id;
             return fetch(`https://api.spotify.com/v1/users/${userId}/playlists/${playlistId}/tracks`, {
                 headers: {
-                  Authorization: `Bearer ${token}`
+                  Authorization: `Bearer ${token}`,
+                  "Content-Type": "application/json"
                 },
                 method: 'POST',
                 body: JSON.stringify({uris: trackIds})
