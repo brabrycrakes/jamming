@@ -25,6 +25,7 @@ class App extends Component {
         for (let j=0; j < tracks.length; j++) {
           if (searchResultsTracks[i].id === tracks[j].id) {
             addTrack = false;
+            break;
           }
         }
         if (addTrack) {
@@ -51,9 +52,9 @@ class App extends Component {
     for (var i=0; i < tracks.length; i++) {
       if (tracks[i].id === item.id) {
         tracks[i].selected = !tracks[i].selected;
-        this.setState( state => ({
-          tracks: tracks,
-        }));
+        this.setState({
+          tracks: tracks
+        });
         return;
       }
     }
